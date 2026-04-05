@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473027-Marlesya Verginia Semiaputty</title>
+    <style>
+        .navbar {
+            list-style: none;
+            padding: 0;
+        }
+
+        .navbar > li {
+            display: inline-block;
+            position: relative;
+            margin-right: 3px; /* jarak antar li */
+        }
+
+        .navbar a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+
+            border-style: dotted;
+            border-color: grey;
+            border-width: 2px;
+        }
+
+        .navbar a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .submenu {
+            list-style: none;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+        }
+
+        .submenu li {
+            margin-top: 3px;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="navbar">
+    <li><a href="#">Home</a></li>
+
+    <li class="dropdown">
+        <a href="#">News</a>
+        <ul class="submenu">
+            <li>Sports</li>
+            <li>Music</li>
+            <li>Movie</li>
+        </ul>
+    </li>
+
+    <li>Contact</li>
+    <li>About</li>
+</ul>
+</body>
+</html>

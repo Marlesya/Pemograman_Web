@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2473027-Marlesya Verginia Semiaputty</title>
+    <style>
+        .container {
+            position: relative;
+            width: 500px;
+            height: 250px;
+            margin: 50px;
+        }
+
+        .card {
+            position: absolute;
+            width: 150px;
+            padding: 10px;
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            transition: 0.3s;
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .card1 {
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .card2 {
+            top: 0;
+            left: 100px;
+            z-index: 2;
+        }
+
+        .card3 {
+            top: 0;
+            left: 200px;
+            z-index: 1;
+        }
+
+        .card:hover {
+            z-index: 10;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    
+    <div class="card card1">
+        <img src="src/circle-red.png">
+    </div>
+
+    <div class="card card2">
+        <img src="src/circle-purple.png">
+    </div>
+
+    <div class="card card3">
+        <img src="src/circle-red.png">
+    </div>
+
+</div>
+
+</body>
+</html>

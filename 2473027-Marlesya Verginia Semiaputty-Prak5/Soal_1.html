@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>2473027-Marlesya Verginia Semiaputty</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            padding: 10px;
+        }
+        .box{
+            position:relative;
+        }
+        .box:before,.box:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #FF0000;
+        }
+
+        .box:before{
+            top:0;
+            left:0;
+            border-right: none;
+            border-bottom: none;
+
+        }
+
+        .box:after{
+            bottom:0;
+            right:0;
+            border-left:none;
+            border-top:none;
+        }
+
+        .corner {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border: 3px solid #FF0000;
+        }
+
+        .top-right {
+            top: 0;
+            right: 0;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .top-left{
+            top:0;
+            left:0;
+            border-right:none;
+            border-bottom:none;
+        }
+
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            border-right: none;
+            border-top: none;
+        }
+
+        .bottom-right {
+            bottom:0;
+            right:0;
+            border-left:none;
+        }
+
+        .box:hover:before,.box:hover:after,.box:hover .corner {
+            border-color: #FF00FF;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            color: blue;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div class="box">
+                    <span class="corner top-right"></span>
+                    <span class="corner bottom-left"></span>
+                    <a href="src/star.jpg" target="blank">
+                        <img src="src/star.jpg" alt="gambar1"><br>
+                    </a>
+                </div>
+            </td>
+
+            <td>
+                <h2>Mouse haover</h2>
+            </td>
+
+            <td>
+                <div class="box">
+                    <span class="corner top-right"></span>
+                    <span class="corner bottom-left"></span>
+                    <a href="src/star.jpg" target="blank">
+                        <img src="src/star.jpg" alt="gambar1"><br>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
