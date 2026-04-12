@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabel Perkalian</title>
+    <style>
+        table {
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+        td {
+            border: 1px solid black;
+            height: 30px;
+            width: 15px;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<table id="tabel"></table>
+
+<script>
+    let angka;
+
+    // looping sampai input valid
+    while (true) {
+        let input = prompt("A number?");
+        angka = parseInt(input);
+
+        if (!isNaN(angka)) {
+            break;
+        } else {
+            alert("Harus memasukkan angka!");
+        }
+    }
+
+    let tabel = document.getElementById("tabel");
+
+    for (let i = 1; i <= angka; i++) {
+        let row = "<tr>";
+        row += "<td>" + i + "</td>";
+        row += "<td>x</td>";
+        row += "<td>" + angka + "</td>";
+        row += "<td>=</td>";
+        row += "<td>" + (i * angka) + "</td>";
+        row += "</tr>";
+
+        tabel.innerHTML += row;
+    }
+</script>
+
+</body>
+</html>

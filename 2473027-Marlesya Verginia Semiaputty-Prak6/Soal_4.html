@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473027-Marlesya Verginia Semiaputty</title>
+    <style>
+        body{
+            color: blue;
+        }
+        .konteiner {
+            border: 3px solid black;
+            width: 300px;
+            margin: 50px auto;
+            padding: 15px;
+            text-align: center;
+        }
+        table{
+            width: 100%;
+            border: 1px solid black;
+        }
+        input {
+            width: 150px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+            color:blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="konteiner">
+        <table>
+            <tr>
+                <td>Input:</td>
+                <td><input type="text" id="input"></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Ouput:</td>
+                <td><input type="text" id="output" readonly></td>
+            </tr>
+        </table>
+        
+        <table>
+            <tr>
+                <td>
+                    <select id="pilihan">
+                        <option value="decimalbin"> decimal-biner</option>
+                        <option value="binerdec">biner-decimal</option>
+                    </select><br>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                    <div class="button-container">
+                        <button onclick="proses()">PROSES</button>
+                        <button onclick="reset()">RESET</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function proses() {
+            let input = document.getElementById("input").value;
+            let pilihan = document.getElementById("pilihan").value;
+            let output = "";
+
+            if (pilihan == "decimalbin"){
+                let angka =parseInt(input);
+
+                if (isNaN(angka) || angka < 0 || angka > 255) {
+                    alert("Input harus angka 0 - 255");
+                    return;
+                }
+                if (angka == 0) {
+                    output = "0";
+                } else {
+                    while (angka > 0) {
+                        let hasil = angka % 2;
+                        output = hasil + output;
+                        angka = Math.floor(angka / 2);
+                    }
+                output = output.padStart(8, "0");
+                }
+            } else {
+                let biner = input;
+
+                if (biner.length != 8){
+                    alert("Biner harus 8 digit");
+                    return;
+                }
+
+                for (let i = 0; i < biner.length; i++) {
+                    if (biner[i] != "0" && biner[i] != "1"){
+                        alert("Biner hanya boleh 0 dan 1");
+                        return;
+                    }
+                }
+
+                let hasil = 0;
+                let panjang = biner.length;
+
+                for (let i = 0; i < panjang; i++) {
+                    let digit = parseInt(biner[i]);
+                    let pangkat = panjang - 1 - i;
+                    hasil += digit * Math.pow(2,pangkat);
+                }
+
+                output = hasil;
+            }
+
+            document.getElementById("output").value = output;
+        }
+
+        function reset() {
+            document.getElementById("input").value = "";
+            document.getElementById("output").value = "";
+        }
+    </script>
+</body>
+</html>
