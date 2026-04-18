@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473027-Marlesya Verginia Semiaputty</title>
+    <style>
+        .box {
+            width: 400px;
+            padding: 15px;
+            font-family: Arial;
+            border: 2px solid #999;
+        }
+        label{
+            display: inline-block;
+            width:60px;
+        }
+        input{
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        select{
+            margin-left: 5px;
+        }
+    </style>
+    <script>
+        let dataArray=[];
+
+        function addData() {
+            let input = document.getElementById("data").value;
+
+            if(input === "") return;
+            dataArray.push(parseFloat(input));
+
+            document.getElementById("data").value = "";
+        }
+
+        function operasi() {
+            let pilihan = document.getElementById("opsi").value;
+            let hasil = document.getElementById("hasil")
+
+            if (dataArray.length === 0) {
+                hasil.value ="Array kosong";
+                return;
+            }
+            if(pilihan == "display") {
+                hasil.value = dataArray.join(", ")
+            }
+            else if (pilihan == "count") {
+                hasil.value = dataArray.length;
+            }
+            else if (pilihan == "sum") {
+                let sum = 0;
+                for (let i = 0; i < dataArray.length; i++) {
+                    sum += dataArray[i];
+                }
+                hasil.value = sum;
+            }
+            else if (pilihan == "avg") {
+                let sum = 0;
+                for (let i = 0; i < dataArray.length; i++) {
+                    sum += dataArray[i];
+                }
+                hasil.value = sum / dataArray.length;
+            }
+            else if (pilihan == "max") {
+                hasil.value = Math.max(...dataArray);
+            }
+            else if (pilihan == "min") {
+                hasil.value = Math.min(...dataArray);
+            }
+            else if (pilihan == "ganjil") {
+                let ganjil = dataArray.filter(x => x % 2 !== 0);
+                hasil.value = ganjil.join(", ");
+            }
+            else if (pilihan == "genap") {
+                let genap = dataArray.filter(x => x % 2 === 0);
+                hasil.value = genap.join(", ");
+            }
+            else if (pilihan == "hapus") {
+                dataArray = [];
+                hasil.value = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <label>Data</label>
+            <input type="text" id="data">
+        </div>
+            <button onclick="addData()">Add</button>
+        
+            <select id="opsi" onchange="operasi()">
+                <option value="" selected>Pilih Operasi</option>
+                <option value="display">Display</option>
+                <option value="count">Count</option>
+                <option value="sum">Sum</option>
+                <option value="avg">Average</option>
+                <option value="max">Max</option>
+                <option value="min">Min</option>
+                <option value="ganjil">Ganjil</option>
+                <option value="genap">Genap</option>
+                <option value="hapus">Hapus</option>
+            </select><br>
+        <div>
+            <label>Hasil</label>
+            <input type="text" id="hasil" readonly>
+        </div>
+    </div>
+</body>
+</html>

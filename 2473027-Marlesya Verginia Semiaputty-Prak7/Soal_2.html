@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473027-Marlesya Verginia Semiaputty</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 400px    
+        }
+        th{
+            background-color: #cfd8cf;
+        }
+        td,th{
+            padding:8px;
+        }
+        .baris1{background-color: #8faed6;}
+        .baris2{background-color: #e6b892;}
+        .hvr{
+            background-color: #CCFFAA;
+        }
+    </style>
+
+    <script>
+        function highlightRow(row){
+            row.classList.add("hvr");
+        }
+        function unhighlightRow(row, originalClass){
+            row.className = originalClass;
+        }
+    </script>
+
+    <body>
+        <table border="1">
+            <tr>
+                <th>Position</th>
+                <th>Programming Language</th>
+                <th>Ratings</th>
+            </tr>
+
+            <tr class="baris1" onmouseover="highlightRow(this)" onmouseout="unhighlightRow(this, 'baris1')">
+                <td>1</td>
+                <td>C</td>
+                <td>18.058%</td>
+            </tr>
+
+            <tr class="baris2" onmouseover="highlightRow(this)" onmouseout="unhighlightRow(this, 'baris2')">
+                <td>2</td>
+                <td>Java</td>
+                <td>18.051%</td>
+            </tr>
+
+            <tr class="baris1" onmouseover="highlightRow(this)" onmouseout="unhighlightRow(this, 'baris1')">
+                <td>3</td>
+                <td>C++</td>
+                <td>9.707%</td>
+            </tr>
+
+            <tr class="baris2" onmouseover="highlightRow(this)" onmouseout="unhighlightRow(this, 'baris2')">
+                <td>4</td>
+                <td>PHP</td>
+                <td>9.662%</td>
+            </tr>
+
+            <tr class="baris1" onmouseover="highlightRow(this)" onmouseout="unhighlightRow(this, 'baris1')">
+                <td>5</td>
+                <td>(Visual) Basic</td>
+                <td>6.392%</td>
+            </tr>
+
+        </table>
+    </body>
+</head>
+<body>
+    
+</body>
+</html>
