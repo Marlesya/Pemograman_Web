@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473027-Marlesya Verginia Semiaputty</title>
+
+    <script src="jquery-4.0.0.min.js"></script>
+
+    <style>
+        ol{
+            list-style: none;
+            padding:0;
+        }
+
+        .menu > li {
+            float: left;
+            width: 150px;
+            background: hotpink;
+            margin-right: 10px;
+            position: relative;
+            padding: 5px;
+            color: white;
+        }
+
+        .submenu {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background: white;
+            border: 2px solid hotpink;
+            width: 150px;
+            color: black;
+        }
+
+        .submenu li {
+            padding: 5px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $(".submenu").hide();
+            $(".menu > li").hover(
+                function(){
+                    $(this).find(".submenu").show();
+                },
+                function(){
+                    $(this).find(".submenu").hide();
+                }
+            )
+        });
+    </script>
+</head>
+<body>
+    <ol class="menu">
+        <li>
+            jquery
+            <ol class="submenu">
+                <li>Download</li>
+                <li>Documentation</li>
+                <li>Blog</li>
+            </ol>
+        </li>
+
+        <li>
+            Community
+            <ol class="submenu">
+                <li>Mailing List</li>
+                <li>Tutorials</li>
+                <li>Demos</li>
+            </ol>
+        </li>
+
+        <li>
+            Development
+            <ol class="submenu">
+                <li>Source Code</li>
+                <li>Bug Tracking</li>
+                <li>Recent Changes</li>
+            </ol>
+        </li>
+
+    </ol>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473027-Marlesya Verginia Semiaputty</title>
+
+    <script src="jquery-4.0.0.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".header").click(function(){
+                let flag = $(this).prop("checked");
+
+                if(flag){
+                    $(".body").prop("checked", true);
+                }else{
+                    $(".body").prop("checked", false);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td align="center">
+                <input type="checkbox" class="header">
+                <hr>
+                <input type="checkbox" class="body"><br>
+                <input type="checkbox" class="body"><br>
+                <input type="checkbox" class="body"><br>
+                <input type="checkbox" class="body"><br>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

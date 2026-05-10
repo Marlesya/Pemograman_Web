@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473027-Marlesya Verginia Semiaputty</title>
+
+    <script src="jquery-4.0.0.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#add").click(function(){
+                let nama = $("#txtNama").val();
+                $("<div class='nama'>" + nama + "</div>").appendTo("#list");
+            });
+
+            $("#search").click(function(){
+                $(".nama").css("text-decoration", "none");
+                let cari =$("#txtNama").val();
+
+                $(".nama:contains('" + cari + "')")
+                    .css("text-decoration", "underline");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="txtNama">
+
+    <button id="add">Add</button>
+    <button id="search">Search</button>
+
+    <div id="list">
+        <div class="nama">John Resig</div>
+        <div class="nama">George Martin</div>
+        <div class="nama">Malcom John Sinclair</div>
+        <div class="nama">J.Ohn</div>
+    </div>
+</body>
+<html>
