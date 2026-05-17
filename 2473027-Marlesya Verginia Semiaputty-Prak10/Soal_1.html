@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473027-Marlesya Verginia Semiaputty</title>
+
+    <script src="jquery.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#search").click(function(){
+
+                var kelas = $(":radio[name='kelas']:checked").val();
+                var fileJSON = "";
+
+                if(kelas == "all"){
+                    fileJSON = "json_soal_1/nilai.js";
+                } else if(kelas == "A"){
+                    fileJSON = "json_soal_1/nilaiA.js";
+                } else {
+                    fileJSON = "json_soal_1/nilaiB.js";
+                }
+
+                $("#tabel tr:gt(0)").remove();
+                $.getJSON(fileJSON, function(data){
+
+                    console.log(data);
+
+                    $.each(data.nilai, function(index, item){
+                        $("#tabel").append(
+                            "<tr>" + 
+                                "<td>" + item.nrp + "</td>" +
+                                "<td>" + item.nama + "</td>" +
+                                "<td>" + item.kelas + "</td>" +
+                                "<td>" + item.nilaiakhir + "</td>" +
+                            "</tr>" 
+                        );
+                    });
+                });
+            });
+        });
+    </script>
+
+    <style>
+        table{
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .box{
+            width: 300px;
+            border: 1px solid black;
+            padding: 12px;
+            margin-bottom: 20px;
+            background-color: #F5F5F5;
+        }
+
+        .kotak{
+            width: 600px;
+            border: 1px solid black;
+            padding: 10px;
+            background-color: white;
+        }
+
+        th, td{
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        th{
+            background-color: black;
+            color: white;
+        }
+
+        #tabel tr:nth-child(odd){
+            background-color: #CCFFAA;
+        }
+
+        #tabel tr:nth-child(even){
+            background-color: #FFFFCC;
+        }
+    </style>
+</head>
+<body>
+    <div class="kotak">
+
+    <b>Selamat! Berikut adalah Daftar Mahasiswa 
+    yang mendapat Nilai A pemograman Web 
+    SI Tahun Ajaran 2023/2024</b> <br><br>
+    <div class="box">
+
+    <input type="radio" name="kelas" value="all" checked> ALL <br>
+    <input type="radio" name="kelas" value="A"> Kelas A <br>
+    <input type="radio" name="kelas" value="B"> Kelas B <br></div>
+
+    <button id="search">Search</button>
+    <br><br>
+    <table id="tabel">
+        <tr>
+            <th>NRP</th>
+            <th>NAMA</th>
+            <th>KELAS</th>
+            <th>NILAI AKHIR</th>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>
